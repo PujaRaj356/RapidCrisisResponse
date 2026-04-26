@@ -111,3 +111,41 @@
   border: 1px solid var(--glass-border);
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    top: auto;
+    flex-direction: row;
+    padding: 0.5rem;
+    z-index: 1000;
+    border-right: none;
+    border-top: 1px solid var(--glass-border);
+    justify-content: center;
+  }
+  
+  .sidebar-brand, .sidebar-footer {
+    display: none;
+  }
+  
+  .sidebar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .nav-item {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 12px;
+  }
+  
+  .nav-item span {
+    display: none;
+  }
+}
