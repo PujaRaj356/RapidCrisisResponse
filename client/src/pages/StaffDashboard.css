@@ -1,0 +1,206 @@
+.staff-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-header h2 {
+  font-size: 1.75rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.stat-card h4 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.incident-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.incident-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 6px solid var(--text-secondary);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.incident-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow);
+}
+
+.status-reported { border-left-color: var(--danger); }
+.status-acknowledged { border-left-color: var(--warning); }
+.status-responding { border-left-color: var(--accent); }
+.status-resolved { border-left-color: var(--success); opacity: 0.7; }
+
+.inc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.inc-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.inc-title h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.severity-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.severity-badge.critical { background: rgba(239,68,68,0.2); color: var(--danger); }
+.severity-badge.high { background: rgba(245,158,11,0.2); color: var(--warning); }
+.severity-badge.medium { background: rgba(59,130,246,0.2); color: var(--accent); }
+.severity-badge.low { background: rgba(16,185,129,0.2); color: var(--success); }
+
+.inc-time {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.inc-body {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.inc-body p {
+  margin-bottom: 0.5rem;
+}
+
+.inc-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inc-actions button {
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-secondary { background: var(--warning); color: white; }
+.btn-secondary:hover { filter: brightness(1.1); }
+
+.btn-success { background: var(--success); color: white; }
+.btn-success:hover { filter: brightness(1.1); }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+}
+.btn-outline:hover { background: rgba(128,128,128,0.1); }
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  background: var(--glass-bg);
+  border-radius: 12px;
+  border: 1px dashed var(--glass-border);
+}
+
+/* Helpers */
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+.text-success { color: var(--success); }
+
+/* Timeline progression CSS */
+.inc-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1rem 0;
+  position: relative;
+}
+
+.time-step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 2px solid var(--glass-border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.time-step.active {
+  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.time-line {
+  flex: 1;
+  height: 4px;
+  background: var(--glass-border);
+  z-index: 1;
+  margin: 0 -10px;
+  transition: var(--transition);
+}
+
+.time-line.active {
+  background: var(--accent);
+}
+
