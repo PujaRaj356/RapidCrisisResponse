@@ -35,7 +35,7 @@ const GuestDashboard = () => {
 
   const submitIncident = async (data) => {
     try {
-      const res = await fetch('http://localhost:5000/api/incidents', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/incidents`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const GuestDashboard = () => {
       const newIncident = await res.json();
       
       // Attempt to get AI classification running async
-      fetch('http://localhost:5000/api/gemini/classify', {
+      fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/gemini/classify`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

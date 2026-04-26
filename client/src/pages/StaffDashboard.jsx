@@ -62,7 +62,7 @@ const StaffDashboard = () => {
   const fetchIncidents = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('http://localhost:5000/api/incidents', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/incidents`, {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       const data = await res.json();
@@ -83,7 +83,7 @@ const StaffDashboard = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await fetch(`http://localhost:5000/api/incidents/${id}/status`, {
+      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/incidents/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
